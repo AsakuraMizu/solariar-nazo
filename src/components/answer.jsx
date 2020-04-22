@@ -9,7 +9,7 @@ import {
   Icon,
 } from 'semantic-ui-react';
 
-class AnswerBar extends React.Component {
+class Answer extends React.Component {
   state = { answer: '' };
   handleChange = (e, { name, value }) => this.setState({ [name]: value });
   handleSubmit = () => {
@@ -36,4 +36,4 @@ class AnswerBar extends React.Component {
 export default compose(
   withCookies,
   withRouter
-)(AnswerBar);
+)(Answer);

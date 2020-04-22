@@ -1,25 +1,17 @@
 import React from 'react';
-import { useCookies } from 'react-cookie';
-import { useHistory } from 'react-router-dom';
 import {
-  Button,
   Container,
   Divider,
   Grid,
   Header,
-  Icon,
   Responsive,
   Segment,
 } from 'semantic-ui-react';
-import AnswerBar from '../components/answer';
+import Answer from '../components/answer';
+import Progress from '../components/progress';
+
 
 function HomePage() {
-  const [ cookies, , removeCookie ] = useCookies();
-  const history = useHistory();
-
-  let handleResume = () => history.push(cookies.last);
-  let handleReset = () => removeCookie('last');
-
   return (
     <React.Fragment>
       <Container text textAlign='center'>
@@ -27,28 +19,16 @@ function HomePage() {
         <p>Type <code>ONE</code> to start the game.</p>
       </Container>
       <Segment placeholder>
-        <Grid columns={2} stackable textAlign='center'>
+        <Grid columns={2} stackable>
           <Responsive minWidth={768} >
             <Divider vertical>Or</Divider>
           </Responsive>
           <Grid.Row verticalAlign='middle'>
             <Grid.Column>
-              <AnswerBar />
+              <Answer />
             </Grid.Column>
             <Grid.Column>
-              <Header icon>
-                <Icon name='play' />
-                Continue Playing...
-              </Header>
-              <br/>
-              <Button.Group>
-                <Button primary onClick={handleResume} disabled={cookies.last === undefined}>
-                  Continue!
-                </Button>
-                <Button color='red' onClick={handleReset} disabled={cookies.last === undefined}>
-                  Clear Game Data
-                </Button>
-              </Button.Group>
+              <Progress />
             </Grid.Column>
           </Grid.Row>
         </Grid>

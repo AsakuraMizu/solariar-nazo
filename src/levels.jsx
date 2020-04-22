@@ -23,7 +23,7 @@ export default {
         content: (
             <div>
                 <p>Solariar Nazo is easy to extend.</p>
-                <p>You can simply create your own copy by editing <code>code/data/levels.jsx</code>.</p>
+                <p>You can simply create your own copy by editing <code>src/levels.jsx</code>.</p>
                 <p>Type <code>D4t4</code> to continue.</p>
             </div>
         )
